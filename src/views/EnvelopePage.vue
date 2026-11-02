@@ -1,6 +1,8 @@
 <template>
   <div class="page">
-    <img :src="logo" alt="Logo" class="title-logo" />
+    <router-link :to="`/${$route.params.code}/edit`" class="logo-link">
+      <img :src="logo" alt="Logo" class="title-logo" />
+    </router-link>
 
     <div class="envelope" @click="toggleOpen" :class="{ open: isOpen }">
 
@@ -141,6 +143,11 @@ export default {
 .title-logo {
   height: 44px;
   width: auto;
+}
+
+.logo-link {
+  display: inline-block;
+  cursor: pointer;
 }
 
 .page {
